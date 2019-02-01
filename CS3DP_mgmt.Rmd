@@ -1,6 +1,6 @@
 ---
 title: "CS3DP Management Survey"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
