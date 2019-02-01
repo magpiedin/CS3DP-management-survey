@@ -4,10 +4,14 @@ CS3DP Management Survey
 Summary of Results
 ------------------
 
-These are raw/quick summaries of the initial results to the CS3DP Data Management survey.
+These are quick summaries of the initial results to the CS3DP Data Management survey.
 
--   Raw response data is in the [CS3DP Management group folder](https://drive.google.com/drive/u/0/folders/1fc-wqiG6J3lPyPC7WoWyV0GP1bJ6A2BQ)
--   R-Scripts to generate or edit this doc are in [this github repo](https://github.com/magpiedin/CS3DP-management-survey)
+1.  Raw response data is in the [CS3DP Management group folder](https://drive.google.com/drive/u/0/folders/1fc-wqiG6J3lPyPC7WoWyV0GP1bJ6A2BQ)
+2.  Intermediate step:
+    -   Opened data from the first sheet in Open Office / CSV-editor of choice:
+    -   Selected all and un-merge cells; make sure columns are aligned
+    -   Appended "\_unmerged.csv" to filename
+3.  R-Scripts to generate or edit this doc are in [this github repo](https://github.com/magpiedin/CS3DP-management-survey)
 
 Tables
 ------

@@ -11,5 +11,3 @@ These are raw/quick summaries of the initial results to the CS3DP Data Managemen
 
     Charts
     ------
-
-    ![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-1.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-2.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-3.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-4.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-5.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-6.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-7.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-8.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-9.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-10.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-11.png)![](CS3DP_mgmt_charts_files/figure-markdown_github/unnamed-chunk-2-12.png)

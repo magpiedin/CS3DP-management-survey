@@ -1,6 +1,6 @@
 ---
 title: "CS3DP Management Survey"
-output: github_document
+output:  html_document
 ---
   
 ```{r setup, include=FALSE}
@@ -9,10 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Summary of Results
 
-These are raw/quick summaries of the initial results to the CS3DP Data Management survey.
+These are quick summaries of the initial results to the CS3DP Data Management survey.
 
-+ Raw response data is in the [CS3DP Management group folder](https://drive.google.com/drive/u/0/folders/1fc-wqiG6J3lPyPC7WoWyV0GP1bJ6A2BQ)
-+ R-Scripts to generate or edit this doc are in [this github repo](https://github.com/magpiedin/CS3DP-management-survey)
+1. Raw response data is in the [CS3DP Management group folder](https://drive.google.com/drive/u/0/folders/1fc-wqiG6J3lPyPC7WoWyV0GP1bJ6A2BQ)
+2. Intermediate step:
+    + Opened data from the first sheet in Open Office / CSV-editor of choice:
+    + Selected all and un-merge cells; make sure columns are aligned
+    + Appended "_unmerged.csv" to filename
+3. R-Scripts to generate or edit this doc are in [this github repo](https://github.com/magpiedin/CS3DP-management-survey)
     
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
     
@@ -23,7 +27,7 @@ These are raw/quick summaries of the initial results to the CS3DP Data Managemen
     library("ggplot2")
     library("stringr")
     library("stargazer")
-    # library("plotly")
+    library("plotly")
     # library("gridExtra")
     
     surveyBU <- read.csv(file = "Survey2-Data-20190114-CS3DP_unmerged.csv", 
@@ -121,7 +125,7 @@ These are raw/quick summaries of the initial results to the CS3DP Data Managemen
 ```
 
     ## Charts {#chartsanchor}
-```{r echo=FALSE} 
+```{r echo=FALSE, results='asis'} 
 # Generate graphs 
 
 # #  If need to cut out columns with non-categ. data
@@ -136,7 +140,7 @@ for (i in 1:NROW(ggSumList)) {
   if (NROW(Qresp) > 0) {
     
     print(
-      # ggplotly(
+      ggplotly(
       ggplot(data = Qresp,
              aes(x = Resp,  
                  fill = Resp)) +
@@ -149,7 +153,7 @@ for (i in 1:NROW(ggSumList)) {
               plot.title=element_text(size=20),
               legend.position="none")
     )
-    # )
+    )
   }
   
 }
