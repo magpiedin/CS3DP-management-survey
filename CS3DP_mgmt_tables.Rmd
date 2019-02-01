@@ -1,0 +1,152 @@
+---
+title: "CS3DP Management Survey"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Summary of Results
+
+These are raw/quick summaries of the initial results to the CS3DP Data Management survey.
+
++ Raw response data is in the [CS3DP Management group folder](https://drive.google.com/drive/u/0/folders/1fc-wqiG6J3lPyPC7WoWyV0GP1bJ6A2BQ)
++ R-Scripts to generate or edit this doc are in [this github repo](https://github.com/magpiedin/CS3DP-management-survey)
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# Prep & Sumamry stats for CS3DP survey data
+
+library("tidyr")
+library("data.table")
+library("ggplot2")
+library("stringr")
+library("stargazer")
+# library("plotly")
+# library("gridExtra")
+
+surveyBU <- read.csv(file = "Survey2-Data-20190114-CS3DP_unmerged.csv", 
+                     stringsAsFactors = FALSE)
+
+
+# drop last two columns of survey data
+survey <- surveyBU[,1:(NROW(surveyBU)-2)]
+
+
+# some extra data cleanup:
+for (i in 15:ncol(survey)) {
+  # survey[,i] <- gsub(" \\(please explain below\\)\\:", "", survey[,i])
+  survey[,i] <- gsub(" \\(please .+", "", survey[,i])
+  survey[,i] <- gsub("\\. Please .+", "", survey[,i])
+}
+
+colnames(survey)[17:18] <- c("Group","Group_TEXT")
+
+survey$Group <- gsub("Both a Creator and a Repository Manager", "Both",
+                     survey$Group)
+survey$Group <- gsub("Repository manager", "Repository",
+                     survey$Group)
+
+# split explanatory-rows from response-rows
+questionKey <- survey[1:2,]
+responses <- survey[-c(1:2),]
+
+
+# prep for summary-charts
+questionKey2 <- questionKey[,grepl("ResponseId|Group$|Q[0-9]+$", colnames(questionKey)) > 0]
+questionKey2 <- questionKey2[,c(1,3,2,4:ncol(questionKey2))]
+questionKey2[3,] <- gsub(" \\(Select all that apply\\) \\- Selected Choice", "", questionKey2[1,])
+
+responses2 <- responses[,grepl("ResponseId|Group$|Q[0-9]+$", colnames(responses)) > 0]
+responses2 <- responses2[,c(1,3,2,4:ncol(responses2))]
+
+
+# order variables
+responses2$Group <- factor(responses2$Group, ordered = TRUE,
+                           levels = c("Creator", "Repository",
+                                      "Both", "Other"))
+
+ggSumList <- list()
+
+
+# Response Summaries ungrouped ####
+for (i in 3:ncol(responses2)) {
+  
+  # split out each main response [excluding supplementary "TEXT" columns]
+  temp <- responses2[,c(1:2,i)]
+  
+  # max number of commas in a response
+  ncomma <- max(str_count(temp[,3], ","))
+  
+  # rename columns and split to new columns by commas
+  colnames(temp) <- c("ResponseId", "Group", "Qresponse")
+  
+  if (ncomma > 0) {
+    temp2 <- separate(temp,
+                      Qresponse,
+                      into = paste0(colnames(responses2)[i],
+                                    "_", 
+                                    seq(1:ncomma)),
+                      sep = ",")
+  } else {temp2 <- temp}
+  
+  # gather/transform to 2-column table
+  if (NCOL(temp2) > 3) {
+    temp3 <- gather(temp2, key = "RespNum", value = "Qresp", 
+                    3:ncol(temp2), na.rm = TRUE)
+    temp3 <- temp3[,-3]
+  } else {temp3 <- temp2}
+  
+  temp3 <- temp3[nchar(temp3[,3]) > 0 & is.na(temp3[,3])==F,]
+  
+  colnames(temp3) <- c("ResponseId", 
+                       "Group",
+                       "Resp")
+                       # colnames(responses2)[i])
+  
+  assign(paste0(colnames(responses2)[i]), temp3)
+
+  ggSumList[[i-2]] <- get(paste0(colnames(responses2)[i]))
+  
+}
+
+# Chart setup:
+# re-order values in responses
+Q10$Resp <- factor(Q10$Resp, ordered = TRUE,
+                   levels = c("0", "1 to 5", "6 to 10", "11 to 25", 
+                              "26-75", "76-150", "151+"))
+
+
+```
+
+## Tables {#tableanchor}
+```{r echo=FALSE, results = 'asis', tidy = TRUE} 
+
+# Generate tables
+for (i in 1:NROW(ggSumList)) {
+
+  Qresp <- get(paste0(colnames(responses2)[i+2]))
+  
+  # Summarize data by groups
+  
+  if (NROW(Qresp) > 0) {
+  
+    SumQresp <- dplyr::count(Qresp, Group, Resp)
+    SumQresp2 <- spread(SumQresp, key = Resp, value = n, fill = "")
+    
+    cat("  \n###", colnames(responses2)[i+2], "  \n")
+    cat("*",str_wrap(questionKey2[3,c(colnames(responses2)[i+2])]), "*  \n")
+    print(knitr::kable(SumQresp2))
+    cat("  \n")
+    
+  }
+  
+}
+
+cat("  \n")
+
+
+```
+
