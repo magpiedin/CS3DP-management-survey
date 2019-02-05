@@ -120,12 +120,36 @@ for (i in 3:ncol(responses2)) {
   
 }
 
-# Chart setup:
-# re-order values in responses
+
+# # Chart setup ####
+
+# Clean values in responses
+Q6$Resp <- gsub("1990 -1994", "1990-1994", Q6$Resp)
+
+Q10$Resp <- gsub("5-Jan", "1-5", Q10$Resp)
+Q10$Resp <- gsub("10-Jun", "6-10", Q10$Resp)
+Q10$Resp <- gsub("25-Nov", "11-25", Q10$Resp)
+
+Q18$Resp <- gsub("3-Jan", "1-3", Q18$Resp)
+Q18$Resp <- gsub("9-Apr", "4-9", Q18$Resp)
+
+Q19$Resp <- gsub("3-Jan", "1-3", Q19$Resp)
+Q19$Resp <- gsub("9-Apr", "4-9", Q19$Resp)
+
+# Re-order values in responses
+Q6$Resp <- factor(Q6$Resp, ordered = TRUE,
+                  levels = c("Before 1990", "1990-1994", "1995-1999", "2000-2004",
+                             "2005-2009", "2010-2014", "2015-2019"))
+
 Q10$Resp <- factor(Q10$Resp, ordered = TRUE,
-                   levels = c("0", "1 to 5", "6 to 10", "11 to 25", 
+                   levels = c("0", "1-5", "6-10", "11-25", 
                               "26-75", "76-150", "151+"))
 
+Q18$Resp <- factor(Q18$Resp, ordered = TRUE,
+                   levels = c("<1", "1-3", "4-9", "10+"))
+
+Q19$Resp <- factor(Q19$Resp, ordered = TRUE,
+                   levels = c("<1", "1-3", "4-9", "10+"))
 
 ```
 
