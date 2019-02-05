@@ -31,7 +31,7 @@ These are quick summaries of the initial results to the CS3DP Data Management su
     library("plotly")
     # library("gridExtra")
     
-    surveyBU <- read.csv(file = "Survey2-Data-20190114-CS3DP_unmerged.csv", 
+    surveyBU <- read.csv(file = "Survey2-Data-20190204-CS3DP.csv", 
                          stringsAsFactors = FALSE)
     
     
@@ -46,8 +46,8 @@ These are quick summaries of the initial results to the CS3DP Data Management su
       survey[,i] <- gsub("\\. Please .+", "", survey[,i])
     }
     
-    colnames(survey)[17:18] <- c("Group","Group_TEXT")
-    
+    colnames(survey)[grepl("Q2$|Q2_4", colnames(survey))] <- c("Group","Group_TEXT")
+
     survey$Group <- gsub("Both a Creator and a Repository Manager", "Both",
                          survey$Group)
     survey$Group <- gsub("Repository manager", "Repository",
@@ -160,5 +160,4 @@ for (i in 1:NROW(ggSumList)) {
 }
 
 ```
-    
-    
+
