@@ -35,7 +35,7 @@ library("stargazer")
 # library("plotly")
 # library("gridExtra")
 
-surveyBU <- read.csv(file = "Survey2-Data-20190114-CS3DP_unmerged.csv", 
+surveyBU <- read.csv(file = "Survey2-Data-20190204-CS3DP.csv", 
                      stringsAsFactors = FALSE)
 
 
@@ -50,7 +50,7 @@ for (i in 15:ncol(survey)) {
   survey[,i] <- gsub("\\. Please .+", "", survey[,i])
 }
 
-colnames(survey)[17:18] <- c("Group","Group_TEXT")
+colnames(survey)[grepl("Q2$|Q2_4", colnames(survey))] <- c("Group","Group_TEXT")
 
 survey$Group <- gsub("Both a Creator and a Repository Manager", "Both",
                      survey$Group)
