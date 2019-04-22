@@ -23,7 +23,7 @@ Tables
 | Group      | 3D Laser | Born-digital | CT Scanning | Lidar scanning | Other | Photogrammetry | Structured Light |
 |:-----------|:---------|:-------------|:------------|:---------------|:------|:---------------|:-----------------|
 | Creator    | 5        | 3            | 6           | 4              | 1     | 12             | 4                |
-| Repository | 4        | 13           | 2           | 3              | 2     | 9              | 1                |
+| Repository | 4        | 14           | 3           | 3              | 2     | 11             | 1                |
 | Both       | 10       | 6            | 7           | 6              | 1     | 21             | 9                |
 | Other      | 2        | 1            | 1           | 2              | 1     | 1              | 1                |
 
@@ -33,7 +33,7 @@ Tables
 
 | Group      | 4   | Archive/Library | Commercial organization | Governmental organization | Museum | Non-profit | Other | University department/center |
 |:-----------|:----|:----------------|:------------------------|:--------------------------|:-------|:-----------|:------|:-----------------------------|
-| Repository | 2   | 13              | 1                       |                           | 5      | 2          |       | 4                            |
+| Repository | 2   | 13              | 1                       |                           | 6      | 4          |       | 4                            |
 | Both       | 1   | 10              | 1                       | 1                         | 7      | 1          | 1     | 11                           |
 
 ### Q6
@@ -43,7 +43,7 @@ Tables
 | Group      | Before 1990 | 1990-1994 | 1995-1999 | 2000-2004 | 2005-2009 | 2010-2014 | 2015-2019 |
 |:-----------|:------------|:----------|:----------|:----------|:----------|:----------|:----------|
 | Creator    |             |           |           |           | 2         | 4         | 10        |
-| Repository | 1           | 1         |           | 1         | 1         | 4         | 6         |
+| Repository | 1           | 1         |           | 1         | 1         | 5         | 7         |
 | Both       |             | 1         | 1         | 2         | 1         | 4         | 10        |
 | Other      | 1           |           |           | 1         |           | 1         |           |
 
@@ -53,7 +53,7 @@ Tables
 
 | Group      | No  | Yes |
 |:-----------|:----|:----|
-| Repository | 14  | 3   |
+| Repository | 16  | 3   |
 | Both       | 17  | 4   |
 
 ### Q8
@@ -62,19 +62,19 @@ Tables
 
 | Group      | No  | Yes |
 |:-----------|:----|:----|
-| Repository | 10  | 5   |
+| Repository | 10  | 7   |
 | Both       | 15  | 5   |
 
 ### Q10
 
 -   Repository Information: Approximately how many 3D datasets do you have in your collection? (Where one dataset corresponds to one metadata record) \*
 
-| Group      | 0   | 1-5 | 6-10 | 11-25 | 26-75 | 76-150 | 151+ |
-|:-----------|:----|:----|:-----|:------|:------|:-------|:-----|
-| Creator    |     |     | 2    | 2     | 4     |        | 7    |
-| Repository | 2   | 5   | 2    | 2     |       |        | 5    |
-| Both       | 1   | 3   |      | 2     | 1     | 2      | 10   |
-| Other      |     |     |      |       |       |        | 1    |
+| Group      | 0   | 1-5 | 6-10 | 11-25 | 26-75 | 76-150 | 151+ | <NA> |
+|:-----------|:----|:----|:-----|:------|:------|:-------|:-----|:-----|
+| Creator    |     |     | 2    | 2     | 4     |        | 7    |      |
+| Repository | 2   | 5   | 2    | 1     |       |        | 7    | 1    |
+| Both       | 1   | 3   |      | 2     | 1     | 2      | 10   |      |
+| Other      |     |     |      |       |       |        | 1    |      |
 
 ### Q11
 
@@ -91,7 +91,7 @@ Tables
 | Group      | architectural drawings) | 3D Printing | Art | Augmented Reality | Commercial | Conservation/Preservation | Education (Higher Ed.) | Education (K-12) | General Public | Government/Policy | Other | Recreational/Hobbyist | Research | Technical Documentation (e.g. engineering | Virtual Reality |
 |:-----------|:-----------------------:|:------------|:----|:------------------|:-----------|:--------------------------|:-----------------------|:-----------------|:---------------|:------------------|:------|:----------------------|:---------|:------------------------------------------|:----------------|
 | Creator    |            3            | 5           | 4   | 3                 |            | 7                         | 6                      | 1                | 4              |                   | 2     | 3                     | 13       | 3                                         | 4               |
-| Repository |            3            | 5           | 3   |                   | 1          | 3                         | 8                      | 3                | 8              | 1                 | 1     | 2                     | 8        | 3                                         | 6               |
+| Repository |            3            | 5           | 3   |                   | 1          | 4                         | 8                      | 3                | 10             | 1                 | 1     | 3                     | 9        | 3                                         | 7               |
 | Both       |            2            | 14          | 8   | 9                 | 1          | 12                        | 13                     | 6                | 11             |                   | 1     | 5                     | 15       | 2                                         | 12              |
 | Other      |            1            | 1           |     | 1                 |            | 1                         | 1                      |                  | 1              |                   |       |                       | 1        | 1                                         | 1               |
 
@@ -101,15 +101,18 @@ Tables
 
 | Group      | No  | Sometimes | Yes |
 |:-----------|:----|:----------|:----|
-| Repository | 13  | 1         | 1   |
+| Repository | 14  | 1         | 2   |
 | Both       | 15  | 2         |     |
 
 ### Q14
 
 -   Cost Considerations: What is your pricing model? \*
 
-Group Basic charge is $5/file with 10 MB alotted to each file. Depends if we deposit with UK archaeology data service as well. They have a calculator for records. internal vs external also depending on funding source ----------- --------------------------------------------------------- ---------------------------------------------------------------------------------------------------- -------------------------------------------------------- Repository 1
-Both 1 1
+| Group      | Resp                                                                                                |    n|
+|:-----------|:----------------------------------------------------------------------------------------------------|----:|
+| Repository | Basic charge is $5/file with 10 MB alotted to each file.                                            |    1|
+| Both       | Depends if we deposit with UK archaeology data service as well. They have a calculator for records. |    1|
+| Both       | internal vs external, also depending on funding source                                              |    1|
 
 ### Q15
 
@@ -118,7 +121,7 @@ Both 1 1
 | Group      | Grants | Institutional Support | Other | Personal Investment/Self-funded |
 |:-----------|:-------|:----------------------|:------|:--------------------------------|
 | Creator    | 5      | 8                     | 1     | 5                               |
-| Repository | 4      | 12                    |       |                                 |
+| Repository | 6      | 13                    |       | 1                               |
 | Both       | 4      | 13                    | 1     | 2                               |
 | Other      |        |                       | 1     |                                 |
 
@@ -129,7 +132,7 @@ Both 1 1
 | Group      | Grants | Institutional Support | Other | Personal Investment/Self-funded |
 |:-----------|:-------|:----------------------|:------|:--------------------------------|
 | Creator    | 9      | 11                    |       | 2                               |
-| Repository | 6      | 9                     |       |                                 |
+| Repository | 8      | 9                     |       | 1                               |
 | Both       | 10     | 11                    | 2     | 2                               |
 | Other      | 1      |                       |       | 1                               |
 
@@ -140,7 +143,7 @@ Both 1 1
 | Group      | Charge at-cost (data-contributor pays) | Charge at-cost (user pays) | Endowment | Institutional support | Other |
 |:-----------|:---------------------------------------|:---------------------------|:----------|:----------------------|:------|
 | Creator    | 1                                      | 1                          | 1         | 10                    | 4     |
-| Repository | 1                                      |                            | 2         | 11                    | 1     |
+| Repository | 2                                      |                            | 3         | 12                    | 2     |
 | Both       | 1                                      |                            | 2         | 12                    | 2     |
 | Other      |                                        |                            |           |                       | 1     |
 
@@ -148,10 +151,10 @@ Both 1 1
 
 -   Staffing: How many persons/FTE (full-time equivalent) do you employ to maintain the repository & its functions? \*
 
-| Group      | &lt;1 | 1-3 | 4-9 | 10+ |
-|:-----------|:------|:----|:----|:----|
-| Repository | 3     | 6   | 3   |     |
-| Both       | 7     | 4   | 3   | 1   |
+| Group      | &lt;1 | 1-3 | 4-9 | 10+ | <NA> |
+|:-----------|:------|:----|:----|:----|:-----|
+| Repository | 3     | 7   | 3   |     | 1    |
+| Both       | 7     | 4   | 3   | 1   |      |
 
 ### Q19
 
@@ -160,7 +163,7 @@ Both 1 1
 | Group      | &lt;1 | 1-3 | 4-9 | 10+ |
 |:-----------|:------|:----|:----|:----|
 | Creator    | 3     | 2   | 4   | 5   |
-| Repository | 4     | 5   |     | 1   |
+| Repository | 4     | 6   |     | 2   |
 | Both       | 1     | 8   | 3   | 2   |
 | Other      |       |     |     | 1   |
 
@@ -170,9 +173,9 @@ Both 1 1
 
 | Group      | etc.) | Morphosource | 3d party vendor (e.g.) Dataverse | Hard drives | Open source option (Fedora/Samvera) | Other | Server setup | Software package/s |
 |:-----------|:-----:|:------------:|:---------------------------------|:------------|:------------------------------------|:------|:-------------|:-------------------|
-| Creator    |   4   |       4      | 4                                | 10          | 1                                   | 1     | 6            | 1                  |
-| Repository |   3   |       4      | 4                                |             | 4                                   | 1     | 6            | 3                  |
-| Both       |   4   |       5      | 5                                | 5           |                                     | 2     | 9            |                    |
+| Creator    |   4   |       4      | 4                                | 10          | 1                                   | 2     | 6            | 1                  |
+| Repository |   6   |       6      | 6                                |             | 4                                   | 2     | 8            | 4                  |
+| Both       |   5   |       5      | 5                                | 5           | 1                                   | 2     | 9            |                    |
 | Other      |       |              |                                  |             |                                     |       | 1            |                    |
 
 ### Q22
@@ -181,7 +184,7 @@ Both 1 1
 
 | Group      | Both raw and derivative files | Other | The derivatives | The derivatives or final versions | The raw data files |
 |:-----------|:------------------------------|:------|:----------------|:----------------------------------|:-------------------|
-| Repository | 8                             | 1     |                 | 1                                 | 1                  |
+| Repository | 8                             | 1     | 1               | 1                                 | 2                  |
 | Both       | 5                             | 1     | 4               | 4                                 |                    |
 
 ### Q23
@@ -215,8 +218,17 @@ Both 1 1
 
 | Group      | No  | Yes |
 |:-----------|:----|:----|
-| Repository | 6   | 5   |
+| Repository | 7   | 6   |
 | Both       | 8   | 7   |
+
+### Q78
+
+-   File Formats: What file formats does your repository accept? \*
+
+| Group      | All of the above | gITF | OBJ | Other | PLY | PTS | PTX | STL | WRL - VRML | X3D | ZTL |
+|:-----------|:-----------------|:-----|:----|:------|:----|:----|:----|:----|:-----------|:----|:----|
+| Repository | 4                | 1    | 5   | 3     | 3   |     |     | 3   |            |     |     |
+| Both       |                  | 2    | 4   | 1     | 3   | 1   | 1   | 4   | 1          | 1   | 1   |
 
 Charts
 ------
